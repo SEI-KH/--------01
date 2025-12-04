@@ -1,0 +1,41 @@
+@use "./base/base";
+@use "./base/reset";
+@use "./global" as *;
+
+// 共通パーツ
+.heading {
+  position: relative;
+  font-weight: $bold;
+  font-size: 36px;
+  letter-spacing: 0.05em;
+  padding-bottom: 16px;
+  color: $deep-green;
+}
+
+.heading::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $deep-green;
+}
+
+.heading--center {
+  text-align: center;
+}
+
+.heading--center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inner {
+}
+
+.text {
+}
+
+.contact-button {
+}
