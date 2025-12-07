@@ -139,30 +139,117 @@ select::-ms-expand {
   display: none;
 }
 
+.inner {
+  width: 100%;
+  max-width: 1060px;
+  margin-inline: auto;
+  padding-inline: 25px;
+}
+@media screen and (max-width: 768px) {
+  .inner {
+    padding-inline: 15px;
+  }
+}
+
 .heading {
   position: relative;
-  font-weight: 700;
   font-size: 36px;
+  padding-bottom: 18px;
+  font-weight: 500;
   letter-spacing: 0.05em;
-  padding-bottom: 16px;
   color: #2b3f2f;
 }
 
 .heading::after {
   position: absolute;
+  bottom: 0;
+  left: 0;
   content: "";
-  display: block;
   width: 34px;
   height: 4px;
   border-radius: 2px;
   background-color: #2b3f2f;
 }
 
-.heading--center {
+.heading.heading--center {
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .heading.heading--center {
+    text-align: left;
+  }
+}
 
-.heading--center::after {
+.heading.heading--center::after {
   left: 50%;
   transform: translateX(-50%);
+}
+@media screen and (max-width: 768px) {
+  .heading.heading--center::after {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #2b3f2f;
+  line-height: 1.875;
+}
+
+.text.text--large {
+  font-size: 24px;
+  line-height: 1.8333333333;
+}
+@media screen and (max-width: 768px) {
+  .text.text--large {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+}
+
+.contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  padding: 15.5px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #f7f7ee;
+  background-color: #2b3f2f;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.contact-button:hover {
+  opacity: 1;
+  background-color: #4d6452;
+}
+
+.contact-button.contact-button--wide {
+  width: 220px;
+  font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  .contact-button.contact-button--wide {
+    padding: 18.5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .md-none {
+    display: none;
+  }
+}
+
+.md-show {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .md-show {
+    display: block;
+  }
 }

@@ -3,39 +3,105 @@
 @use "./global" as *;
 
 // 共通パーツ
+.inner {
+  width: 100%;
+  max-width: 1030px + 15px * 2;
+  margin-inline: auto;
+  padding-inline: 25px;
+  @include mq("md") {
+    padding-inline: 15px;
+  }
+}
+
 .heading {
   position: relative;
-  font-weight: $bold;
   font-size: 36px;
+  padding-bottom: 18px;
+  font-weight: $medium;
   letter-spacing: 0.05em;
-  padding-bottom: 16px;
   color: $deep-green;
 }
 
 .heading::after {
   position: absolute;
+  bottom: 0;
+  left: 0;
   content: "";
-  display: block;
   width: 34px;
   height: 4px;
   border-radius: 2px;
   background-color: $deep-green;
 }
 
-.heading--center {
+.heading.heading--center {
   text-align: center;
+  @include mq("md") {
+    text-align: left;
+  }
 }
 
-.heading--center::after {
+.heading.heading--center::after {
   left: 50%;
   transform: translateX(-50%);
-}
-
-.inner {
+  @include mq("md") {
+    left: 0;
+    transform: translateX(0);
+  }
 }
 
 .text {
+  font-size: 16px;
+  font-weight: $medium;
+  letter-spacing: 0.05em;
+  color: $deep-green;
+  line-height: calc(30 / 16);
+}
+
+.text.text--large {
+  font-size: 24px;
+  line-height: calc(44 / 24);
+  @include mq("md") {
+    font-size: 20px;
+    line-height: calc(36 / 20);
+  }
 }
 
 .contact-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  padding: 15.5px;
+  font-size: 16px;
+  font-weight: $medium;
+  letter-spacing: 0.05em;
+  color: $skin-white;
+  background-color: $deep-green;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  &:hover {
+    opacity: 1;
+    background-color: $light-green;
+  }
+}
+
+.contact-button.contact-button--wide {
+  width: 220px;
+  font-size: 20px;
+  @include mq("md") {
+    padding: 18.5px;
+  }
+}
+
+.md-none {
+  @include mq("md") {
+    display: none;
+  }
+}
+
+.md-show {
+  display: none;
+  @include mq("md") {
+    display: block;
+  }
 }
