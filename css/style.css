@@ -139,6 +139,40 @@ select::-ms-expand {
   display: none;
 }
 
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 120px;
+  width: 100%;
+  z-index: 1000;
+  background-color: #f7f7ee;
+}
+
+.header__nav {
+  height: inherit;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__item {
+  height: inherit;
+}
+
+.header__item:not(:first-child) {
+  margin-left: 66px;
+}
+
+.header__link {
+  display: block;
+  height: inherit;
+}
+
 .inner {
   width: 100%;
   max-width: 1060px;

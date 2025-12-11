@@ -2,6 +2,47 @@
 @use "./base/reset";
 @use "./global" as *;
 
+// header
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 120px;
+  width: 100%;
+  z-index: 1000;
+  background-color: $skin-white;
+}
+
+.header__title {
+}
+
+.header__nav {
+  height: inherit;
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header__item {
+  height: inherit;
+}
+
+.header__item:not(:first-child) {
+  margin-left: 66px;
+}
+
+.header__link {
+  display: block;
+  height: inherit;
+}
+
+.header__contact {
+}
+
 // 共通パーツ
 .inner {
   width: 100%;
